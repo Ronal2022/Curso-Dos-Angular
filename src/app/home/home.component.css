@@ -2,3 +2,41 @@
     margin: 0;
     padding: 0;
 }
+
+.textoDeArea{
+    resize: both;
+    min-width: 300px;
+    max-width: 1000px;
+    min-height: 100px;
+    max-height: 300px;
+}
+
+label.required::after {
+    content: "*";
+    color: red;
+    margin: 5px;
+}
+
+.input-error{
+    border-color: red;
+}
+
+.paddinTop{
+    padding-top: 120px;
+}
+
+.margenEmailLabel{
+    margin-left: 90px;
+}
+
+.margenEmailInput{
+    margin-left: -20px;
+}
+
+.margenComentario{
+    margin-left: 130px;
+}
+
+.margenComentarioInput{
+    margin-left: 15px;
+}

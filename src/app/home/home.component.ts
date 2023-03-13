@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, MinLengthValidator, MinValidator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +12,25 @@ export class HomeComponent implements OnInit {
   nombre: string = '';
 	apellido: string = '';
 	correo: string = '';
-	comentarios: string = '';
+	comentario: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
-  enviarInformacion(): void {
-    if (this.nombre.trim() === '' || this.apellido.trim() === '' || this.correo.trim() === '') {
-      console.log('Información enviada:', this.nombre, this.apellido, this.correo);
-    }
+  // enviarInformacion(): void {
+  //   if (this.nombre.trim() === '' || this.apellido.trim() === '' || this.correo.trim() === '') {
+  //     console.log('Información enviada:', this.nombre, this.apellido, this.correo);
+  //   }
+  // }
+
+  enviarNombre(): void {
+    console.log('El nombre es: ' + this.nombre);
+    console.log('El nombre es: ' + this.apellido);
+    console.log('El nombre es: ' + this.correo);
+    console.log('El nombre es: ' + this.comentario);
   }
 
 }

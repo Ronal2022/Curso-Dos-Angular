@@ -1,57 +1,70 @@
-<h1 class="col-md-12 col-lg-3">Hola Mundo</h1>
-<img class="ronal" src="./assets/imagen/Ronal.png" alt="Ronal imagen">
+<!-- imagen Ronal -->
+<img class="ronal paddinTop" src="./assets/imagen/Ronal.png" alt="Ronal imagen">
   
-<div>
-  <h2 class="text-center fw-bold m-4">Formulario de contacto</h2>
-    <div class="form-group row mb-3">
-      <label for="nombre" class="col-sm-1 col-form-label required">Nombre:</label>
-      <div class="col-sm-3">
+
+<h2 class="text-center fw-bold m-4">Formulario de contacto</h2>
+<form #nombreForm="ngForm" (ngSubmit)="enviarNombre()">
+  <!-- label e input de nombre y apellido -->
+  <div class="form-group row mb-3">
+    <div class="col-sm-5 row justify-content-center">
+      <div class="col-sm-1">
+        <label for="nombre" class="col-form-label required">Nombre:</label>
+      </div>
+      <div class="col-sm-4 ms-5">
         <input type="text"
-               class="form-control"
-               required
-               id="nombre"
-               [(ngModel)]="nombre"
-               name="nombre"
-               placeholder="Ingrese su nombre">
+                class="form-control"
+                required
+                id="nombre"  
+                [(ngModel)]="nombre"
+                name="nombre"
+                minlength="2"
+                placeholder="Ingrese su nombre">
       </div>
-      <label for="apellido" class="col-sm-1 col-form-label ms-5 required">Apellido:</label>
-      <div class="col-sm-3">
+    </div>
+    <div class="col-sm-4 row justify-content-center">
+      <div class="col-sm-1">
+        <label for="apellido" class="col-form-label required">Apellido:</label>
+      </div>
+      <div class="col-sm-5 ms-5">
         <input type="text"
-               class="form-control"
-               id="apellido"
-               required
-               [(ngModel)]="apellido"
-               name="apellido"
-               placeholder="Ingrese su apellido">
+                class="form-control"
+                id="apellido"
+                required
+                [(ngModel)]="apellido"
+                name="apellido"
+                placeholder="Ingrese su apellido">
       </div>
     </div>
-    
-    <div class="form-group row">
-      <label for="correo" class="col-sm-1 col-form-label required">Correo electrónico:</label>
-      <div class="col-sm-3">
-        <input type="email"
-               class="form-control"
-               id="correo"
-               required
-               [(ngModel)]="correo"
-               name="correo"
-               placeholder="Ingrese su correo electrónico">
-      </div>
+  </div>
+  <!-- label e input de correo -->
+  <div class="form-group row mb-3 col-sm-6 margenEmailLabel">
+    <label for="correo" class="col-sm-3 col-form-label required">Correo electrónico:</label>
+    <div class="col-sm-6 margenEmailInput">
+      <input type="email"
+              class="form-control"
+              id="correo"
+              required
+              [(ngModel)]="correo"
+              name="correo"
+              placeholder="Ingrese su correo electrónico">
     </div>
-    
-    <div class="form-group row">
-      <label for="comentarios" class="col-sm-1 col-form-label">Comentarios:</label>
-      <div class="col-sm-10">
-        <textarea class="form-control textoDeArea"
-                  id="comentarios"
-                  [(ngModel)]="comentarios"
-                  name="comentarios"
-                  rows="3"
-                  maxlength="500"
-                  placeholder="Ingrese un comentario. Máximo 500 caracteres."></textarea>
-      </div>
+  </div>
+  <!-- lavel e input de comentarios -->
+  <div class="form-group row margenComentario">
+    <label for="comentarios" class="col-sm-1 col-form-label">Comentarios:</label>
+    <div class="col-sm-10 margenComentarioInput">
+      <textarea class="form-control textoDeArea"
+                id="comentarios"
+                [(ngModel)]="comentario"
+                name="comentarios"
+                rows="3"
+                maxlength="500"
+                placeholder="Ingrese un comentario. Máximo 500 caracteres."></textarea>
     </div>
-    <div class="text-center m-5">
-      <button class="btn btn-primary py-2 px-4">Enviar</button>
-    </div>
-</div>
+  </div>
+  <div class="col-sm-12 row justify-content-center">
+      <button class="btn btn-outline-primary btn-sm p-2 m-2 text-center col-sm-1"
+              [disabled]="nombreForm.invalid">Enviar
+      </button>
+  </div>
+</form>
